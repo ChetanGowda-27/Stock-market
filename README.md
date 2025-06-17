@@ -84,6 +84,11 @@ http://localhost:3000/stocks
 * **Ready to extend** into advanced features like real-time price updates, user authentication, and more.
 
 ---
+## Demo
+
+![App Screenshot](https://via.placeholder.com/600x400.png?text=App+Screenshot)
+
+
 
 ## 📈 Future Improvements
 
@@ -95,36 +100,4 @@ http://localhost:3000/stocks
 
 ---
 
-## 🤝 Contributions
 
-Contributions, suggestions, and feedback are welcome! Feel free to open issues or submit pull requests.
-
----
-
-## 📫 Contact
-
-*Your Name* — [your.email@example.com](mailto:your.email@example.com)
-LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-GitHub: [github.com/yourusername](https://github.com/yourusername)
-
----
-
-## ⭐️ If you find this project useful, please give it a star!
-
----
-
-*Built with ❤️ using MERN stack.*
-
-```
-
----
-
-**Tips:**
-
-- Replace placeholders like `yourusername`, image links, and contact info.
-- Add a demo GIF or screenshot for visual appeal.
-- Keep it concise but highlight your skills clearly.
-- Use markdown badges if you want to showcase technologies or build status.
-
-Would you like me to generate a GIF example or help you with adding badges?
-```
