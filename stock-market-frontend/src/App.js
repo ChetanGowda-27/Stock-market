@@ -13,16 +13,14 @@ const Stocks = ({ addToWatchlist }) => {
 	const [stocks, setStocks] = useState([]);
 
 	useEffect(() => {
-		// Fetch stock data from the backend
 		fetch("http://localhost:5000/api/stocks")
 			.then((res) => res.json())
 			.then((data) => setStocks(data))
 			.catch((error) => console.error("Error fetching stocks:", error));
 	}, []);
-	console.log(setStocks, "Stocksdata");
 
 	const getRandomColor = () => {
-		const colors = ["#FF0000", "#00FF00"]; // Red and Green
+		const colors = ["#FF0000", "#00FF00"];
 		return colors[Math.floor(Math.random() * colors.length)];
 	};
 
@@ -50,7 +48,7 @@ const Stocks = ({ addToWatchlist }) => {
 
 const Watchlist = ({ watchlist }) => {
 	const getRandomColor = () => {
-		const colors = ["#FF0000", "#00FF00"]; // Red and Green
+		const colors = ["#FF0000", "#00FF00"];
 		return colors[Math.floor(Math.random() * colors.length)];
 	};
 
@@ -75,9 +73,9 @@ const Watchlist = ({ watchlist }) => {
 
 function App() {
 	const [watchlist, setWatchlist] = useState([]);
+	const [theme, setTheme] = useState("light");
 
 	const addToWatchlist = (stock) => {
-		// Add stock to watchlist
 		fetch("http://localhost:5000/api/watchlist", {
 			method: "POST",
 			headers: {
@@ -87,7 +85,6 @@ function App() {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				// Show an alert with the message received from the server
 				alert(data.message);
 				setWatchlist([...watchlist, stock]);
 			})
@@ -96,12 +93,28 @@ function App() {
 			);
 	};
 
+	useEffect(() => {
+		document.body.className = theme === "dark" ? "dark-theme" : "light-theme";
+	}, [theme]);
+
+	const toggleTheme = () => {
+		setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+	};
+
 	return (
 		<Router>
-			<nav>
-				<NavLink to="/stocks">Stocks</NavLink>
-				<NavLink to="/watchlist">Watchlist</NavLink>
+			<nav className="navbar">
+				<div className="nav-links">
+					<NavLink to="/stocks">Stocks</NavLink>
+					<NavLink to="/watchlist">Watchlist</NavLink>
+				</div>
+				<div className="theme-switch">
+					<button onClick={toggleTheme}>
+						{theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+					</button>
+				</div>
 			</nav>
+
 			<Routes>
 				<Route
 					path="/stocks"
