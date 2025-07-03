@@ -1,70 +1,53 @@
-/* src/App.css */
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #d9d7ca;
-    margin: 0;
-    padding: 0;
+/* Theme classes */
+body.light-theme {
+	background-color: #d9d7ca;
+	color: #1f454d;
 }
 
-.App {
-    text-align: center;
-    padding: 20px;
+body.dark-theme {
+	background-color: #121212;
+	color: #e0e0e0;
 }
 
-h1 {
-    color: #1f454d;
+.dark-theme .App li {
+	background-color: #2e2e2e;
+	color: #ffffff;
 }
 
-h2 {
-    color: #3c8d93;
-    margin-top: 30px;
+.dark-theme button {
+	background-color: #444;
+	color: #e0e0e0;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.dark-theme nav {
+	background-color: #1a1a1a;
 }
 
-li {
-    background-color: #3c8d93;
-    color: #d9d7ca;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.dark-theme nav a {
+	color: #e0e0e0;
 }
 
-button {
-    background-color: #1f454d;
-    color: #d9d7ca;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.dark-theme nav a:hover {
+	color: #64ffda;
 }
 
-button:hover {
-    background-color: #3c8d93;
+/* Theme switch button container */
+.theme-switch {
+	position: absolute;
+	top: 10px;
+	right: 20px;
 }
 
-/* Navigation bar styles */
-nav {
-    background-color: #1f454d;
-    padding: 15px 0;
+.theme-switch button {
+	background-color: transparent;
+	color: inherit;
+	border: 2px solid currentColor;
+	padding: 6px 12px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.3s ease;
 }
 
-nav a {
-    color: #d9d7ca;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #3c8d93;
+.theme-switch button:hover {
+	background-color: rgba(0, 0, 0, 0.1);
 }
